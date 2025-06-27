@@ -1,0 +1,26 @@
+﻿@model AulaVinteUm.Models.Produto
+
+@{
+    ViewData["Title"] = "Criar Produto";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h4>Produto</h4>
+<hr />
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label for="Nome">Nome</label>
+        <input type="text" class="form-control" id="Nome" name="Nome" required />
+    </div>
+    <div class="form-group">
+        <label for="Preco">Preço</label>
+        <input type="text" class="form-control" id="Preco" name="Preco" required />
+    </div>
+    <div class="form-group">
+        <label for="Estoque">Estoque</label>
+        <input type="number" class="form-control" id="Estoque" name="Estoque" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Criar</button>
+</form>

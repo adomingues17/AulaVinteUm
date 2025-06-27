@@ -1,0 +1,32 @@
+﻿@model IEnumerable<AulaVinteUm.Models.Venda>
+
+@{
+    ViewData["Title"] = "Vendas";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Data da Venda</th>
+            <th>Total</th>
+            <th>Itens</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var venda in Model)
+        {
+            <tr>
+                <td>@venda.DataVenda.ToString("dd/MM/yyyy HH:mm:ss")</td>
+                <td>@venda.Total.ToString("C")</td>
+                <td>
+                    @foreach (var item in venda.ItensVenda)
+                    {
+                        <div>@item.Produto.Nome - Quantidade: @item.Quantidade</div>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

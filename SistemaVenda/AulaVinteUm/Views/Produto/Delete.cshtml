@@ -1,0 +1,16 @@
+﻿@model AulaVinteUm.Models.Produto
+
+@{
+    ViewData["Title"] = "Excluir Produto";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h4>Você tem certeza que deseja excluir o produto "@Model.Nome"?</h4>
+<form asp-action="Delete" method="post">
+    <input type="hidden" name="id" value="@Model.ProdutoId" />
+    <button type="submit" class="btn btn-danger">Excluir</button>
+    <a asp-controller="Produto" asp-action="Index" class="btn btn-outline-secondary">Cancelar</a>
+    
+    <!--<a href="@Url.Action("Index", "Produto")" class="btn btn-secondary">Cancelar</a> -->
+</form>
